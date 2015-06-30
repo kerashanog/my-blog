@@ -1,6 +1,11 @@
 %h1= @post.title
 %p= simple_format(@post.body)
 
+%h2= pluralize(@post.comments.count, "comment")
+= render @post.comments
+%h3 Add a comment:
+= render 'comments/form'
+
 %p
   = link_to "Edit", edit_post_path(@post)
   |

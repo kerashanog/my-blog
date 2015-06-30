@@ -9,13 +9,28 @@
     - flash.each do |name, msg|
       = content_tag(:div, msg, class: "alert alert-#{name}")
     
-    - if !user_signed_in?
-      %p= link_to "Admin Login", new_user_session_path
-      
-    - if user_signed_in?
-      %p= link_to "New Post", new_post_path
-      %p= link_to "Log Out", destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' }
-      
+    %nav.menu
+      .wrapper
+        %h6.menu-title.show
+          = link_to root_path do
+            = image_tag 'logo64.jpg', alt: 'KeraS'
+            KeraS
+            
+        #menu-button.nav-button
+          %hr/
+          %hr/
+          %hr/
+          %span.close x
+    
+    #menu
+      #search Search....
+      %ul#link.clearfix
+        - if !user_signed_in?
+          %li= link_to "Admin Login", new_user_session_path
+        - if user_signed_in?
+          %li= link_to "New Post", new_post_path
+          %li= link_to "Log Out", destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' }
+        %li= link_to "About Us", '#'
+        %li= link_to "Ask me", '#'
+    
     = yield
-  
-  

@@ -1,15 +1,26 @@
-%h1= @post.title
-%p= simple_format(@post.body)
-
-%h2= pluralize(@post.comments.count, "comment")
-= render @post.comments
-%h3 Add a comment:
-= render 'comments/form'
-
-%p
-  - if user_signed_in?
-    = link_to "Edit", edit_post_path(@post)
-    |
-    = link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"}
-    |
-  = link_to "Back", root_path
+%section#posts.permalink-page
+  %article.post.text{id: "#{@post.id}"}
+    .post-date
+      = link_to @post do
+        = @post.created_at.strftime("%b %d")
+        %br
+        = @post.created_at.strftime("%Y")
+        
+    %h3= @post.title
+    
+    = simple_format(@post.body)
+  = render 'footer'
+  
+%section#disqus.clearfix
+  %h4= pluralize(@post.comments.count, "comment")
+  = render @post.comments
+  %h4 Add a comment:
+  = render 'comments/form'
+    
+  %p
+    - if user_signed_in?
+      = link_to "Edit", edit_post_path(@post)
+      |
+      = link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"}
+      |
+    = link_to "Back", root_path

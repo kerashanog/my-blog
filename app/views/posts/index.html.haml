@@ -1,7 +1,14 @@
-- @posts.each do |post|
-  = link_to post do
-    = post.created_at.strftime("%b %d")
-    %br
-    = post.created_at.strftime("%Y")
-  %h2= link_to post.title, post
-  %p= simple_format(post.body)   
+= render 'header'
+
+%section#posts
+  - @posts.each do |post|
+    %article.post.text{id: "#{post.id}"}
+      .post-date
+        = link_to post do
+          = post.created_at.strftime("%b %d")
+          %br
+          = post.created_at.strftime("%Y")
+      %h3= link_to post.title, post
+      
+      = simple_format(post.body)
+    = render 'footer'

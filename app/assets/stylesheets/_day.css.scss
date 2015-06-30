@@ -1,0 +1,72 @@
+		/********************
+		DAY MODE
+		********************/
+		
+		/********************
+		TEXT COLOR
+		********************/
+		
+		body, a, .navigation a, #links li a, .menu .menu-title a, .menu .nav-button .close, #posts footer .date a, .post-date a {
+			color: #3f3f3f;
+		}
+		
+		#posts footer a, .quote h3:before {
+			color: #bfbfbf;
+		}
+		
+		.source, #notes .notes li, #notes .notes li a, .copyright, .copyright a {
+			color: #6f6f6f;
+		}
+		
+		a:hover, #links li:hover a, .menu .menu-title:hover a, #posts footer a:hover, .menu .nav-button:hover .close, .post-date:hover a, #notes .notes li a:hover {
+			color: #8fc045;
+		}
+		
+		.navigation a:hover {
+			color: #ffffff;
+		}
+		
+		/********************
+		BACKGROUND COLOR
+		********************/
+		
+		.menu {
+			background: #fff;
+		}
+		
+		.navigation a {
+			background: #f9f9f9;
+		}
+		
+		.menu .nav-button hr {
+			background: #3f3f3f;
+		}
+		
+		.navigation a:hover, .menu .nav-button:hover hr {
+			background: #8fc045;
+		}
+		
+		#menu {
+			background: rgba(255,255,255,0);
+		}
+		
+		.fullscreen {
+			background: #fff !important;
+			background: rgba(255,255,255,0.95) !important;
+		}
+		
+		/********************
+		BORDER COLOR
+		********************/
+		
+		.navigation {
+			border-top: 1px solid #f2f2f2;
+		}
+		
+		.menu, #search, .chat ul li {
+			border-bottom: 1px solid #f2f2f2;
+		}
+		
+		#posts footer, #disqus {
+			border-bottom: 2px solid #f2f2f2;
+		}

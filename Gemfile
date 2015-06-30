@@ -43,9 +43,12 @@ group :development, :test do
   gem 'spring'
 end
 
-#Haml (HTML Abstraction Markup Language) is a layer on top of HTML or XML
+# Haml (HTML Abstraction Markup Language) is a layer on top of HTML or XML
 gem 'haml', '~> 4.0.6'
 
-#Forms made easy!
+# Forms made easy!
 gem 'simple_form', '~> 3.1.0'
+
+# Flexible authentication solution for Rails with Warden
+gem 'devise', '~> 3.5.1'
 

@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :find_post, only: [:show, :edit, :update, :destroy]
   
   def index
@@ -28,7 +29,7 @@ class PostsController < ApplicationController
   
   def update
     if @post.update(post_params)
-      redirect_to @post
+      redirect_to @post, notice: 'Post was successfully updated.'
     else
       render :edit
     end
@@ -36,7 +37,7 @@ class PostsController < ApplicationController
   
   def destroy
     @post.destroy
-    redirect_to :root
+    redirect_to :root, notice: 'Post was successfully deleted.'
   end
   
   private
